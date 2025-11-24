@@ -1,176 +1,284 @@
-Infrastructure Monitoring and Management Dashboard
-1. Overview
+# Infrastructure Monitoring and Management Dashboard
 
-This project consists of an internal dashboard designed to monitor and manage a Kubernetes-based infrastructure deployed on virtual machines. It provides real-time visibility into workloads, cluster resources, configurations, and system events. The platform also supports operational actions, resource creation/import, and integrates with the company’s existing virtualized environment.
+## Table of Contents
+1. [Overview](#overview)  
+2. [Functional Scope](#functional-scope)  
+   - [Workload Monitoring](#workload-monitoring)  
+   - [Cluster Resources and Configuration](#cluster-resources-and-configuration)  
+   - [Resource Creation and Import](#resource-creation-and-import)  
+   - [Event Notifications](#event-notifications)  
+   - [Management Operations](#management-operations)  
+3. [Technical Environment](#technical-environment)  
+   - [Virtualization](#virtualization)  
+   - [Deployment and Integration](#deployment-and-integration)  
+   - [Architecture Summary](#architecture-summary)  
+4. [Technologies Used](#technologies-used)  
+5. [Installation and Setup](#installation-and-setup)  
+6. [Usage](#usage)  
+7. [Contributions](#contributions)  
+8. [Project Status](#project-status)  
+9. [Screenshots](#screenshots)  
+10. [Architecture Diagram](#architecture-diagram)
 
-The main focus of the work was on virtualization, deployment, monitoring, and infrastructure integration.
+---
 
-2. Functional Scope
-2.1 Workload Monitoring
+## Overview
 
-The dashboard displays real-time information and visual summaries for:
+This project provides an internal dashboard for real-time monitoring and management of a Kubernetes-based infrastructure deployed on virtual machines.  
+It enables full visibility into workloads, cluster resources, configurations, and system events, while supporting operational actions, resource creation, and import workflows.
 
-CronJobs
+Focus areas:
 
-Deployments
+- Virtualization and cluster setup  
+- Kubernetes integration  
+- Monitoring and metric visualization  
+- Infrastructure-level operations  
 
-Jobs
+---
 
-Pods
+## Functional Scope
 
-ReplicaSets
+### Workload Monitoring
 
-DaemonSets
+Real-time monitoring for Kubernetes workloads:
 
-StatefulSets
+- CronJobs  
+- Deployments  
+- Jobs  
+- Pods  
+- ReplicaSets  
+- DaemonSets  
+- StatefulSets  
 
-These views include charts, statistical breakdowns, and detailed resource tables.
+Features:
 
-<img src="https://github.com/user-attachments/assets/95764c32-b930-4bc5-9fac-e570125b7c52" width="240" height="784"> <img src="https://github.com/user-attachments/assets/f2519fce-be6b-46fc-817a-069b5ee7824f" width="216" height="410">
+- Status indicators (Running / Pending / Failed)  
+- Charts and statistical summaries  
+- Filterable and sortable tables  
 
-Workload status is displayed with Running / Failed / Pending indicators.
+Example screenshot:  
+![Workload Monitoring](https://github.com/user-attachments/assets/c9a50f46-c34b-45d0-a14d-ce3b896b5fc4)
 
-<img src="https://github.com/user-attachments/assets/c9a50f46-c34b-45d0-a14d-ce3b896b5fc4" width="100%">
-2.2 Cluster Resources and Configuration
+---
 
-The dashboard exposes a full cluster-level view, including:
+### Cluster Resources and Configuration
 
-ConfigMaps
+Cluster-wide visibility into:
 
-Persistent Volume Claims
+- ConfigMaps  
+- Persistent Volume Claims  
+- Secrets  
+- Storage Classes  
+- Nodes  
+- Persistent Volumes  
+- Namespaces  
+- Network Policies  
+- Cluster Roles / Role Bindings  
+- Service Accounts  
+- Custom Resource Definitions  
 
-Secrets
+Each resource shows metadata, status, and event logs.
 
-Storage Classes
+Example screenshot:  
+![Cluster Resources](https://github.com/user-attachments/assets/9674639b-f153-4f13-9d0a-a678f230dbb1)
 
-Nodes
+---
 
-Persistent Volumes
+### Resource Creation and Import
 
-Namespaces
+Features:
 
-Network Policies
+- YAML creation through an integrated editor  
+- YAML import and validation  
+- Error reporting and debugging  
 
-Cluster Roles
+Screenshots:
 
-Role Bindings
+- YAML Creation  
+![YAML Creation](https://github.com/user-attachments/assets/66f333e0-4e4c-431e-8112-a2b9b0f4ebf1)  
+- YAML Import  
+![YAML Import](https://github.com/user-attachments/assets/a436b5d2-31ce-4c89-b39c-1623d9ecded8)  
+- Configuration Validation  
+![Validation](https://github.com/user-attachments/assets/4381ead8-06dc-4983-a8cc-f64a803798eb)
 
-Service Accounts
+---
 
-Custom Resource Definitions
+### Event Notifications
 
-Each resource category includes metadata, status details, and event history.
+Real-time events include:
 
-<img src="https://github.com/user-attachments/assets/9674639b-f153-4f13-9d0a-a678f230dbb1" width="100%">
-2.3 Resource Creation and Import
+- Pod failures and restarts  
+- Job scheduling and termination  
+- Deployment updates  
+- Node state changes  
+- Cluster warnings and errors  
 
-A dedicated section allows users to manage Kubernetes objects directly from the interface.
+Events are streamed and organized by type and severity.
 
-YAML Creation
-<img src="https://github.com/user-attachments/assets/66f333e0-4e4c-431e-8112-a2b9b0f4ebf1" width="100%">
+Example screenshot:  
+![Event Notifications](https://github.com/user-attachments/assets/3b828ed4-501b-47a4-bcd2-ff677bedf634)
 
-YAML Import
-<img src="https://github.com/user-attachments/assets/a436b5d2-31ce-4c89-b39c-1623d9ecded8" width="100%">
+---
 
-Configuration Validation
-<img src="https://github.com/user-attachments/assets/4381ead8-06dc-4983-a8cc-f64a803798eb" width="100%">
+### Management Operations
 
-2.4 Event Notifications
+Operational tasks:
 
-A real-time event panel reports:
+- Start/stop workloads  
+- View logs  
+- Inspect recent events  
+- Refresh resource status  
 
-Pod failures or restarts
+Screenshots:  
+![Management 1](https://github.com/user-attachments/assets/325419c1-836c-4a17-9b9c-de770cfe5809)  
+![Management 2](https://github.com/user-attachments/assets/caec96ee-1760-4c9f-bd35-0c757ffc4635)
 
-Job scheduling and termination
+---
 
-Deployment updates
+## Technical Environment
 
-Node state changes
+### Virtualization
 
-Cluster warnings and errors
+- Kubernetes nodes deployed across multiple VMs  
+- Network configuration and resource allocation  
+- API stability and service reliability  
 
-Notifications are streamed from the cluster and organized by severity and type.
+### Deployment and Integration
 
-<img src="https://github.com/user-attachments/assets/3b828ed4-501b-47a4-bcd2-ff677bedf634" width="35%">
-2.5 Management Operations
+- Integration with existing infrastructure  
+- Backend services communicating with Kubernetes API  
+- Authentication and role-based access control  
 
-The system supports a set of operational tasks, including:
+### Architecture Summary
 
-Starting and stopping workloads
+- Virtualized Kubernetes cluster  
+- Monitoring and metrics collection layer  
+- Management layer for YAML and operational tasks  
+- Dashboard frontend with charts, tables, and notifications  
 
-Inspecting logs
+---
 
-Viewing recent events
+## Technologies Used
 
-Refreshing workload status
+- Kubernetes  
+- Virtualized VM environment  
+- Internal API services  
+- Dashboard frontend technology  
+- Automation and deployment tools  
 
-These tools streamline day-to-day cluster operations.
+---
 
-<img src="https://github.com/user-attachments/assets/325419c1-836c-4a17-9b9c-de770cfe5809" width="100%"> <img src="https://github.com/user-attachments/assets/caec96ee-1760-4c9f-bd35-0c757ffc4635" width="100%">
-3. Technical Environment
-3.1 Virtualization
+## Installation and Setup
 
-Deployment of Kubernetes nodes across multiple virtual machines
+```bash
+# Clone the repository
+git clone <repository-url>
+cd <project-directory>
 
-VM-level networking and resource allocation
+# Backend installation
+cd backend
+npm install   # or pip install -r requirements.txt
 
-Ensuring reliable API communication and service availability
+# Frontend installation
+cd ../frontend
+npm install
 
-3.2 Deployment and Integration
+# Configure environment
+cp .env.example .env
+# Modify .env with API endpoints and credentials
+Requirements:
 
-Integration of the dashboard with the existing infrastructure
+Kubernetes cluster reachable
 
-Implementation of the data layer communicating with the Kubernetes API
+Proper VM networking and resource allocation
 
-Support for authentication and role-based access controls
+Service account permissions configured
 
-3.3 Architecture Summary
+Usage
 
-Virtualized Kubernetes cluster running on VMs
+Login to the dashboard.
 
-Monitoring layer for metric and resource collection
+Select a namespace or operate cluster-wide.
 
-Management layer for YAML operations and workload control
+Explore workloads, logs, and real-time events.
 
-Dashboard frontend with charts, resource tables and notifications
+Create or import YAML configurations.
 
-4. Technologies Used
+Use management tools for operational tasks.
 
-(Adjust according to your exact stack.)
+Contributions
 
-Kubernetes
+Preparing and managing VM infrastructure for Kubernetes
 
-Virtualized VM environment
+Deploying dashboard and backend services
 
-Internal API services
+Implementing monitoring views and metrics
 
-Dashboard frontend technology
+Adding resource creation/import module
 
-Supporting automation tools
+Building event notification system
 
-5. Contributions
+Debugging, testing, and optimizing deployment
 
-During this project, the following contributions were completed:
+Project Status
 
-Preparing and managing the virtual machine environment for the cluster
+The dashboard is fully operational internally for:
 
-Deploying and configuring the dashboard
+Workload monitoring
 
-Implementing monitoring views for workloads and cluster resources
+Cluster resource inspection
 
-Adding resource creation/import features
+Event management
 
-Building the event notification system
+Basic operational tasks
 
-Testing, debugging, and optimizing the deployment
+Future improvements may include advanced analytics, alerting, and automated workflows.
 
-6. Project Status
+Screenshots
 
-The dashboard is fully operational and used internally for monitoring, inspection, event handling, and basic cluster management. Future improvements may extend functionality based on infrastructure needs.
-<img width="1644" height="566" alt="image" src="https://github.com/user-attachments/assets/b1ab2ab8-90e5-45a9-ac7f-2834f87f6687" />
-<img width="1655" height="817" alt="image" src="https://github.com/user-attachments/assets/e75915f4-3d4d-4808-9061-d98d9879feb2" />
-<img width="1661" height="810" alt="image" src="https://github.com/user-attachments/assets/a9412a98-ecb3-4e61-8751-429c4f3694dd" />
-<img width="1638" height="769" alt="image" src="https://github.com/user-attachments/assets/56812f66-a553-490f-8d01-516c0167ea70" />
-<img width="1917" height="935" alt="image" src="https://github.com/user-attachments/assets/de7b4fd6-1805-4d44-82f3-4b8eb29b94ed" />
-<img width="1667" height="720" alt="image" src="https://github.com/user-attachments/assets/d3f17059-7731-4020-8afb-03c522473e3a" />
-<img width="1633" height="276" alt="image" src="https://github.com/user-attachments/assets/1752e6a3-ac85-4f92-aada-7330d46cabd7" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+Architecture Diagram
++------------------------------------------------------+
+|                 Virtualized Infrastructure           |
+|                                                      |
+|  +--------------------+   +------------------------+ |
+|  |    VM Node 1       |   |      VM Node N        | |
+|  | (Worker / Master)  |   |  (Worker / Master)    | |
+|  +---------+----------+   +-----------+------------+ |
+|            |                          |              |
++------------|--------------------------|--------------+
+             |                          |
+             v                          v
+      +------------------------------------------+
+      |            Kubernetes Cluster            |
+      |  API Server, Scheduler, Controller, etc.|
+      +------------------------------------------+
+                       |
+                       v
+      +------------------------------------------+
+      |         Internal API Service Layer       |
+      |  - Resource queries                      |
+      |  - Event streaming                       |
+      |  - Auth and RBAC                         |
+      +------------------------------------------+
+                       |
+                       v
+      +------------------------------------------+
+      |        Monitoring & Management UI        |
+      |  - Workload dashboards                   |
+      |  - Resource explorer                     |
+      |  - YAML creation/import                  |
+      |  - Notifications                         |
+      +------------------------------------------+
