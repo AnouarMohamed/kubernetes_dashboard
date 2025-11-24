@@ -234,20 +234,6 @@ Basic operational tasks
 
 Future improvements may include advanced analytics, alerting, and automated workflows.
 
-Screenshots
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Architecture Diagram
 +------------------------------------------------------+
