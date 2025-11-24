@@ -167,3 +167,9 @@ Testing, debugging, and optimizing the deployment
 6. Project Status
 
 The dashboard is fully operational and used internally for monitoring, inspection, event handling, and basic cluster management. Future improvements may extend functionality based on infrastructure needs.
+<img width="1644" height="566" alt="image" src="https://github.com/user-attachments/assets/b1ab2ab8-90e5-45a9-ac7f-2834f87f6687" />
+<img width="1655" height="817" alt="image" src="https://github.com/user-attachments/assets/e75915f4-3d4d-4808-9061-d98d9879feb2" />
+<img width="1661" height="810" alt="image" src="https://github.com/user-attachments/assets/a9412a98-ecb3-4e61-8751-429c4f3694dd" />
+<img width="1638" height="769" alt="image" src="https://github.com/user-attachments/assets/56812f66-a553-490f-8d01-516c0167ea70" />
+<img width="1917" height="935" alt="image" src="https://github.com/user-attachments/assets/de7b4fd6-1805-4d44-82f3-4b8eb29b94ed" />
+<img width="1667" height="720" alt="image" src="https://github.com/user-attachments/assets/d3f17059-7731-4020-8afb-03c522473e3a" />
