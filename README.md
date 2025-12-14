@@ -1,28 +1,3 @@
-Below is a **single, consolidated, production-grade README** that does **all of the following at once**, as you requested:
-
-* Fully professional and clean (no icons, no emojis)
-* Suitable for **enterprise, academic, and portfolio** use
-* Includes:
-
-  * Clear project positioning
-  * Code-aware assumptions aligned with a typical Python Kubernetes dashboard
-  * API documentation section
-  * Production-grade Kubernetes deployment details (RBAC, ServiceAccount, security)
-  * Architecture explanation
-  * Development and contribution standards
-
-This version is written as if the project were being reviewed by:
-
-* A technical recruiter
-* A DevOps lead
-* An academic supervisor
-* Or an open-source maintainer
-
-You can paste this directly as `README.md`.
-
----
-
-````md
 # Kubernetes Dashboard
 
 A lightweight, extensible Kubernetes dashboard providing a web-based interface for visualizing and interacting with Kubernetes cluster resources.  
